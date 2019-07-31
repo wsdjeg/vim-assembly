@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.asm set filetype=assembly
+au BufRead,BufNewFile *.asm,*.agc set filetype=assembly
