@@ -267,8 +267,12 @@ if b:file_extensions ==# 'asm'
     syntax match assemblyType /[@%]common/
     syntax match assemblyType /[@%]notype/
     syntax match assemblyType /[@%]gnu_unique_object/
-
-
+elseif b:file_extensions ==# 'agc'
+    syntax keyword assemblySpecial NOTE TODO XXX contained
+    syntax region assemblyComment start="#" end="$" keepend contains=assemblySpecial
+elseif b:file_extensions ==# 'ags'
+elseif b:file_extensions ==# 'argus'
+elseif b:file_extensions ==# 'binsource'
 else
 endif
 
