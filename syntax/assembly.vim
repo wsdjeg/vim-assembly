@@ -270,9 +270,18 @@ if b:file_extensions ==# 'asm'
 elseif b:file_extensions ==# 'agc'
     syntax keyword assemblySpecial NOTE TODO XXX contained
     syntax region assemblyComment start="#" end="$" keepend contains=assemblySpecial
+    syntax keyword assemblyMnemonic ABS\* AST,[12] BOVF COMP\** COS\* CROSS DBSU DMOVE\** DTS ITC\** ITC[IQ] LOAD LODON NOLOD SHIFTL SHIFTR SMOVE\** SQUARE STZ SWITCH TEST TMOVE TRAD TSLC TSLT\** TSRT\** TSU TTS VMOVE\** VSLT\** VSQ VSRT\** VTS
+    syntax keyword assemblyDirective -CADR XCADR
+    syntax keyword assemblyDirective = =MINUS =ECADR \-2CADR \-GENADR 2BCADR 2CADR 2DEC\** 2FCADR 2OCT ADRES BANK BBCON\** BLOCK BNKSUM CADR CHECK= COUNT\** DEC\** EBANK= ECADR EQUALS ERASE FCADR GENADR MEMORY MM NV OCT OCTAL REMADR SBANK= SETLOC SUBRO VN
+    syntax keyword assemblyDirective \-1DNADR \-2DNADR \-3DNADR \-4DNADR \-5DNADR -6DNADR \-DNCHAN \-DNPTR 1DNADR 2DNADR 3DNADR 4DNADR 5DNADR 6DNADR DNCHAN DNPTR
+    syntax keyword assemblyRegister D Z N SL BI EDH CLHP HP LP ZI IN0 IN1 IN2 IN3 IN4 IN5 OUT0 OUT1 OUT2 OUT3 OUT4 RIP
+    syntax keyword assemblyRegister A L Q EB FB Z BB ARUPT LRUPT QRUPT ZRUPT BBRUPT BRUPT CYR SR CYL EDOP
 elseif b:file_extensions ==# 'ags'
+    syntax region assemblyComment start="#" end="$" keepend contains=assemblySpecial
 elseif b:file_extensions ==# 'argus'
+    syntax region assemblyComment start="#" end="$" keepend contains=assemblySpecial
 elseif b:file_extensions ==# 'binsource'
+    syntax region assemblyComment start=";" end="$" keepend contains=assemblySpecial
 else
 endif
 
