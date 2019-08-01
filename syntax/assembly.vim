@@ -282,6 +282,9 @@ elseif b:file_extensions ==# 'argus'
     syntax region assemblyComment start="#" end="$" keepend contains=assemblySpecial
 elseif b:file_extensions ==# 'binsource'
     syntax region assemblyComment start=";" end="$" keepend contains=assemblySpecial
+    syntax match assemblyOperator /=/
+    syntax keyword assemblyMnemonic BANK NUMWORDS CHECKWORDS
+    syntax match assemblyMacro /[0-7]\+/
 else
 endif
 
